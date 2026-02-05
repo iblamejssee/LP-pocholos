@@ -23,7 +23,7 @@ export default function Footer() {
                         <ul className="space-y-3 text-stone-400 font-body text-sm">
                             <li><Link href="#" className="hover:text-white transition-colors">Inicio</Link></li>
                             <li><Link href="#" className="hover:text-white transition-colors">Nosotros</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Carta</Link></li>
+                            <li><Link href="carta-pocholos.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Carta</Link></li>
                             <li><Link href="#" className="hover:text-white transition-colors">Promociones</Link></li>
                         </ul>
                     </div>
@@ -53,19 +53,21 @@ export default function Footer() {
                     <div>
                         <h4 className="font-bold text-land-red text-sm tracking-widest uppercase mb-6">Síguenos</h4>
                         <div className="flex gap-3 sm:gap-4">
-                            <Link href="#" className="bg-stone-800 p-3 rounded-full hover:bg-land-red transition-colors text-white">
+                            <Link href="https://www.facebook.com/profile.php?id=100092052827995"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-stone-800 p-3 rounded-full hover:bg-land-red transition-colors text-white">
                                 <Facebook size={20} />
                             </Link>
                             <Link href="#" className="bg-stone-800 p-3 rounded-full hover:bg-land-red transition-colors text-white">
                                 <Instagram size={20} />
                             </Link>
-                            <Link href="#" className="bg-stone-800 p-3 rounded-full hover:bg-land-red transition-colors text-white">
-                                <Twitter size={20} />
-                            </Link>
                         </div>
                         <div className="mt-8">
                             <Link
-                                href="/login"
+                                href="https://pocholos.vercel.app/login"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="text-xs text-stone-600 hover:text-stone-400 transition-colors border-b border-stone-800 hover:border-stone-600 pb-1"
                             >
                                 Acceso Personal

@@ -45,7 +45,7 @@ export default function AboutSection() {
                             {/* REEMPLAZAR CON FOTO REAL (Chef o Carbón) */}
                             <div className="relative h-full w-full overflow-hidden bg-stone-900">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069&auto=format&fit=crop"
+                                    src="sala1.jpg"
                                     alt="Fuego y Tradición"
                                     fill
                                     className="object-cover"

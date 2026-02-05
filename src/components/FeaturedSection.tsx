@@ -97,7 +97,7 @@ export default function FeaturedSection() {
                                 className="object-contain transition-transform duration-500 group-hover:scale-105"
                             />
                             <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-black shadow-md border border-white">
-                                <span className="flex items-center gap-1">🥗 LIGHT</span>
+                                <span className="flex items-center gap-1">LIGHT</span>
                             </div>
                         </div>
                         <div className="p-4 sm:p-6 md:p-8">
