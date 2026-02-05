@@ -79,14 +79,14 @@ export default function MapSection() {
                         className="flex flex-col justify-center space-y-6"
                     >
                         {/* Dirección */}
-                        <div className="bg-stone-800/50 backdrop-blur-sm p-6 rounded-2xl border border-stone-700 hover:border-land-red/50 transition-colors">
+                        <div className="bg-stone-800/30 backdrop-blur-sm p-5 rounded-xl border border-stone-700/50 hover:border-stone-600 transition-colors">
                             <div className="flex items-start gap-4">
-                                <div className="bg-land-red p-3 rounded-xl shrink-0">
-                                    <MapPin size={24} className="text-white" />
+                                <div className="p-2 rounded-lg bg-stone-700/50 shrink-0">
+                                    <MapPin size={20} className="text-stone-400" />
                                 </div>
                                 <div>
-                                    <h3 className="font-serif text-xl font-bold text-white mb-2">Dirección</h3>
-                                    <p className="text-stone-300 font-body">
+                                    <h3 className="font-serif text-lg font-bold text-white mb-1">Dirección</h3>
+                                    <p className="text-stone-400 font-body text-sm">
                                         Urbanización Luis Carranza Mz. A – 06 (FONAVI), Ayacucho
                                     </p>
                                 </div>
@@ -94,14 +94,14 @@ export default function MapSection() {
                         </div>
 
                         {/* Horario */}
-                        <div className="bg-stone-800/50 backdrop-blur-sm p-6 rounded-2xl border border-stone-700 hover:border-land-orange/50 transition-colors">
+                        <div className="bg-stone-800/30 backdrop-blur-sm p-5 rounded-xl border border-stone-700/50 hover:border-stone-600 transition-colors">
                             <div className="flex items-start gap-4">
-                                <div className="bg-land-orange p-3 rounded-xl shrink-0">
-                                    <Clock size={24} className="text-land-brown" />
+                                <div className="p-2 rounded-lg bg-stone-700/50 shrink-0">
+                                    <Clock size={20} className="text-stone-400" />
                                 </div>
                                 <div>
-                                    <h3 className="font-serif text-xl font-bold text-white mb-2">Horario</h3>
-                                    <p className="text-stone-300 font-body">
+                                    <h3 className="font-serif text-lg font-bold text-white mb-1">Horario</h3>
+                                    <p className="text-stone-400 font-body text-sm">
                                         Lunes a Domingo: 5:30 PM - 11:00 PM
                                     </p>
                                 </div>
@@ -109,14 +109,14 @@ export default function MapSection() {
                         </div>
 
                         {/* Teléfono */}
-                        <div className="bg-stone-800/50 backdrop-blur-sm p-6 rounded-2xl border border-stone-700 hover:border-green-500/50 transition-colors">
+                        <div className="bg-stone-800/30 backdrop-blur-sm p-5 rounded-xl border border-stone-700/50 hover:border-stone-600 transition-colors">
                             <div className="flex items-start gap-4">
-                                <div className="bg-green-600 p-3 rounded-xl shrink-0">
-                                    <Phone size={24} className="text-white" />
+                                <div className="p-2 rounded-lg bg-stone-700/50 shrink-0">
+                                    <Phone size={20} className="text-stone-400" />
                                 </div>
                                 <div>
-                                    <h3 className="font-serif text-xl font-bold text-white mb-2">Teléfono</h3>
-                                    <p className="text-stone-300 font-body">
+                                    <h3 className="font-serif text-lg font-bold text-white mb-1">Teléfono</h3>
+                                    <p className="text-stone-400 font-body text-sm">
                                         +51 936 853 996
                                     </p>
                                 </div>
@@ -130,8 +130,8 @@ export default function MapSection() {
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-3 bg-land-red hover:bg-land-brown text-white px-6 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-xl group"
                         >
-                            <Navigation size={20} className="group-hover:animate-pulse" />
-                            <span className="uppercase tracking-wider">Cómo Llegar</span>
+                            <Navigation size={18} className="group-hover:animate-pulse" />
+                            <span className="uppercase tracking-wider text-sm">Cómo Llegar</span>
                         </a>
                     </motion.div>
                 </div>

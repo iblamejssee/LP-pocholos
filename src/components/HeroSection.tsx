@@ -70,15 +70,17 @@ export default function HeroSection() {
                     </h3>
                 </motion.div>
 
-                {/* Botón de acción - Estilo Maido */}
+                {/* Botón de acción - Elegante para reservas */}
                 <motion.a
-                    href="#featured"
+                    href="https://wa.me/51936853996?text=Hola%2C%20quisiera%20hacer%20una%20reserva%20en%20Pocholo's%20Chicken"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
-                    className="inline-block mt-8 sm:mt-10 bg-white text-land-brown px-8 py-4 font-bold uppercase tracking-widest text-sm hover:bg-land-orange hover:text-white transition-colors duration-300"
+                    className="inline-flex items-center gap-3 mt-8 sm:mt-10 bg-transparent border-2 border-white/80 text-white px-8 py-4 font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-land-brown transition-all duration-300"
                 >
-                    Descubre Nuestra Carta
+                    Reservar Mesa
                 </motion.a>
             </div>
 
