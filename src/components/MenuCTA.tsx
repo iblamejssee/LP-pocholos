@@ -7,12 +7,12 @@ import { ArrowRight } from 'lucide-react';
 
 export default function MenuCTA() {
     return (
-        <section className="relative py-24 bg-land-dark overflow-hidden">
+        <section className="relative py-12 sm:py-16 md:py-24 bg-land-dark overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-land-bg/50 to-transparent pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 lg:gap-12">
 
                     {/* Visual de Platos */}
                     <motion.div
@@ -22,7 +22,7 @@ export default function MenuCTA() {
                         transition={{ duration: 0.8 }}
                         className="w-full lg:w-1/2 relative"
                     >
-                        <div className="relative aspect-video w-full rounded-sm overflow-hidden group">
+                        <div className="relative aspect-video w-full rounded-xl sm:rounded-2xl overflow-hidden group shadow-2xl">
                             {/* REEMPLAZAR CON FOTO BODEGÓN DE PLATOS */}
                             <Image
                                 src="/d-pocholos.png"
@@ -40,13 +40,13 @@ export default function MenuCTA() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="w-full lg:w-5/12 text-left lg:text-right"
+                        className="w-full lg:w-5/12 text-center lg:text-right"
                     >
-                        <h2 className="font-serif text-4xl lg:text-5xl text-land-text mb-6">
+                        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-land-text mb-4 sm:mb-6">
                             Sabores que <br />
                             <span className="text-land-accent">Perduran</span>
                         </h2>
-                        <p className="font-body text-stone-400 mb-10 text-lg font-light leading-relaxed">
+                        <p className="font-body text-stone-400 mb-6 sm:mb-10 text-base sm:text-lg font-light leading-relaxed">
                             Desde nuestros clásicos cortes a la brasa hasta acompañamientos que despiertan los sentidos. Descubre nuestra propuesta gastronómica completa.
                         </p>
 
