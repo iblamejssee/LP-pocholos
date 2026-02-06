@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ShoppingBag, Calendar, Home } from 'lucide-react';
+import { Menu, X, ShoppingBag, Calendar, Home, Instagram, Facebook } from 'lucide-react';
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +19,7 @@ export default function Navbar() {
 
     const navLinks = [
         { name: 'Inicio', href: '/', icon: Home },
-        { name: 'La Carta', href: '/carta-pocholos.pdf', target: '_blank' },
+        { name: 'La Carta', href: '/carta-pocholos.pdf', target: '_blank', icon: ShoppingBag },
         { name: 'Reservas', href: '/reservas', icon: Calendar },
     ];
 
@@ -76,37 +76,81 @@ export default function Navbar() {
                 </div>
             </motion.nav>
 
-            {/* Mobile Menu Overlay */}
+            {/* Mobile Menu Overlay Redesigned */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, x: '100%' }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: '100%' }}
-                        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                        className="fixed inset-0 z-50 bg-land-brown text-white md:hidden flex flex-col"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 md:hidden"
                     >
-                        <div className="p-6 flex justify-end">
-                            <button
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="p-2 bg-white/10 rounded-full"
-                            >
-                                <X size={24} />
-                            </button>
+                        {/* Backdrop Blur Strong */}
+                        <div className="absolute inset-0 bg-black/80 backdrop-blur-xl" />
+
+                        {/* Background Decoration */}
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+                            <div className="absolute -top-[20%] -right-[20%] w-[500px] h-[500px] bg-land-red rounded-full blur-[100px]" />
+                            <div className="absolute -bottom-[20%] -left-[20%] w-[500px] h-[500px] bg-land-orange rounded-full blur-[100px]" />
                         </div>
 
-                        <div className="flex-1 flex flex-col items-center justify-center gap-8 p-8">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    href={link.href}
+                        <div className="relative h-full flex flex-col p-6">
+                            {/* Header Mobile */}
+                            <div className="flex justify-between items-center mb-12">
+                                <span className="font-serif text-2xl text-white font-bold tracking-tight">
+                                    POCHOLO'S <span className="text-land-red">CHICKEN</span>
+                                </span>
+                                <button
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="flex items-center gap-4 text-2xl font-serif font-bold"
+                                    className="p-2 bg-white/10 rounded-full text-white hover:bg-white/20 transition-colors"
                                 >
-                                    {link.icon && <link.icon size={24} className="text-land-orange" />}
-                                    {link.name}
-                                </Link>
-                            ))}
+                                    <X size={28} />
+                                </button>
+                            </div>
+
+                            {/* Links Container */}
+                            <div className="flex-1 flex flex-col justify-center space-y-8 px-4">
+                                {navLinks.map((link, index) => (
+                                    <motion.div
+                                        key={link.name}
+                                        initial={{ x: -50, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        transition={{ delay: index * 0.1 }}
+                                    >
+                                        <Link
+                                            href={link.href}
+                                            target={link.target}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                            className="group flex items-center gap-6"
+                                        >
+                                            <span className="text-white/40 group-hover:text-land-orange transition-colors">
+                                                {link.icon && <link.icon size={32} />}
+                                            </span>
+                                            <span className="font-serif text-4xl text-white font-bold group-hover:text-land-orange transition-colors tracking-wide">
+                                                {link.name}
+                                            </span>
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                            {/* Footer / Socials */}
+                            <motion.div
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.3 }}
+                                className="border-t border-white/10 pt-8 mt-auto"
+                            >
+                                <p className="text-stone-400 text-sm mb-4 text-center">Síguenos en redes</p>
+                                <div className="flex justify-center gap-6">
+                                    <a href="#" className="p-3 bg-white/5 rounded-full text-white hover:bg-land-red transition-colors">
+                                        <Facebook size={24} />
+                                    </a>
+                                    <a href="#" className="p-3 bg-white/5 rounded-full text-white hover:bg-land-orange transition-colors">
+                                        <Instagram size={24} />
+                                    </a>
+                                </div>
+                            </motion.div>
                         </div>
                     </motion.div>
                 )}
