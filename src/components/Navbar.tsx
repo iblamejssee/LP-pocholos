@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ShoppingBag, Calendar, Home, Instagram, Facebook } from 'lucide-react';
+import { Menu, X, ShoppingBag, Calendar, Home } from 'lucide-react';
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -18,9 +18,9 @@ export default function Navbar() {
     }, []);
 
     const navLinks = [
-        { name: 'Inicio', href: '/', icon: Home },
-        { name: 'La Carta', href: '/carta-pocholos.pdf', target: '_blank', icon: ShoppingBag },
-        { name: 'Reservas', href: '/reservas', icon: Calendar },
+        { name: 'Inicio', href: '/' },
+        { name: 'La Carta', href: '/carta-pocholos.pdf', target: '_blank' },
+        { name: 'Reservas', href: '/reservas' },
     ];
 
     return (
@@ -36,7 +36,7 @@ export default function Navbar() {
             >
                 <div className="container mx-auto px-6 flex items-center justify-between">
                     {/* Logo Mobile / Scrolled */}
-                    <Link href="/" className="font-serif text-2xl text-white font-bold tracking-tight">
+                    <Link href="/" className="font-serif text-lg md:text-2xl text-white font-bold tracking-tight">
                         POCHOLO'S <span className="text-land-red">CHICKEN</span>
                     </Link>
 
@@ -66,93 +66,62 @@ export default function Navbar() {
                         </a>
                     </div>
 
-                    {/* Mobile Menu Button */}
+                    {/* Mobile Menu Button - Styled like reference */}
                     <button
-                        className="md:hidden text-white p-2"
-                        onClick={() => setIsMobileMenuOpen(true)}
+                        className="md:hidden text-white border-2 border-white/30 rounded-lg p-1.5 hover:bg-white/10 transition-colors"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
-                        <Menu size={28} />
+                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
             </motion.nav>
 
-            {/* Mobile Menu Overlay Redesigned */}
+            {/* Mobile Menu Dropdown - Reference Style */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 md:hidden"
-                    >
-                        {/* Backdrop Blur Strong */}
-                        <div className="absolute inset-0 bg-black/80 backdrop-blur-xl" />
+                    <>
+                        {/* Backdrop invisible to close on click outside */}
+                        <div
+                            className="fixed inset-0 z-40 bg-black/20"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        />
 
-                        {/* Background Decoration */}
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
-                            <div className="absolute -top-[20%] -right-[20%] w-[500px] h-[500px] bg-land-red rounded-full blur-[100px]" />
-                            <div className="absolute -bottom-[20%] -left-[20%] w-[500px] h-[500px] bg-land-orange rounded-full blur-[100px]" />
-                        </div>
-
-                        <div className="relative h-full flex flex-col p-6">
-                            {/* Header Mobile */}
-                            <div className="flex justify-between items-center mb-12">
-                                <span className="font-serif text-2xl text-white font-bold tracking-tight">
-                                    POCHOLO'S <span className="text-land-red">CHICKEN</span>
+                        <motion.div
+                            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                            transition={{ duration: 0.2 }}
+                            className="fixed top-24 left-4 right-4 z-50 bg-white rounded-xl shadow-2xl overflow-hidden origin-top"
+                        >
+                            <div className="p-4 border-b border-stone-100 bg-stone-50">
+                                <span className="font-serif font-bold text-stone-900 text-lg">
+                                    Pocholo's Chicken
                                 </span>
-                                <button
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="p-2 bg-white/10 rounded-full text-white hover:bg-white/20 transition-colors"
-                                >
-                                    <X size={28} />
-                                </button>
                             </div>
 
-                            {/* Links Container */}
-                            <div className="flex-1 flex flex-col justify-center space-y-8 px-4">
-                                {navLinks.map((link, index) => (
-                                    <motion.div
+                            <div className="flex flex-col py-2">
+                                {navLinks.map((link) => (
+                                    <Link
                                         key={link.name}
-                                        initial={{ x: -50, opacity: 0 }}
-                                        animate={{ x: 0, opacity: 1 }}
-                                        transition={{ delay: index * 0.1 }}
+                                        href={link.href}
+                                        target={link.target}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="px-6 py-4 text-stone-600 font-medium hover:bg-stone-50 hover:text-land-red transition-colors border-b border-stone-50 last:border-0 text-base"
                                     >
-                                        <Link
-                                            href={link.href}
-                                            target={link.target}
-                                            onClick={() => setIsMobileMenuOpen(false)}
-                                            className="group flex items-center gap-6"
-                                        >
-                                            <span className="text-white/40 group-hover:text-land-orange transition-colors">
-                                                {link.icon && <link.icon size={32} />}
-                                            </span>
-                                            <span className="font-serif text-4xl text-white font-bold group-hover:text-land-orange transition-colors tracking-wide">
-                                                {link.name}
-                                            </span>
-                                        </Link>
-                                    </motion.div>
+                                        {link.name}
+                                    </Link>
                                 ))}
+                                <a
+                                    href="https://wa.me/51936853996"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-6 py-4 text-land-brown font-bold hover:bg-stone-50 transition-colors"
+                                >
+                                    Contacto WhatsApp
+                                </a>
                             </div>
-
-                            {/* Footer / Socials */}
-                            <motion.div
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.3 }}
-                                className="border-t border-white/10 pt-8 mt-auto"
-                            >
-                                <p className="text-stone-400 text-sm mb-4 text-center">Síguenos en redes</p>
-                                <div className="flex justify-center gap-6">
-                                    <a href="#" className="p-3 bg-white/5 rounded-full text-white hover:bg-land-red transition-colors">
-                                        <Facebook size={24} />
-                                    </a>
-                                    <a href="#" className="p-3 bg-white/5 rounded-full text-white hover:bg-land-orange transition-colors">
-                                        <Instagram size={24} />
-                                    </a>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </>

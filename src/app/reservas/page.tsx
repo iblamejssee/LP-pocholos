@@ -63,9 +63,9 @@ export default function ReservationsPage() {
     return (
         <main className="min-h-screen bg-stone-50">
             {/* Header Mini */}
-            <div className="h-20 md:h-28 bg-black flex items-center justify-center relative overflow-hidden">
+            <div className="h-32 md:h-40 bg-black flex items-end justify-center pb-8 relative overflow-hidden">
                 <div className="absolute inset-0 bg-stone-900 opacity-80" />
-                <h1 className="relative z-10 font-serif text-2xl md:text-4xl text-white font-bold tracking-wider">
+                <h1 className="relative z-10 font-serif text-3xl md:text-5xl text-white font-bold tracking-wider">
                     Reservas
                 </h1>
             </div>
