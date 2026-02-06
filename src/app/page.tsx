@@ -7,6 +7,10 @@ import MapSection from '@/components/MapSection';
 import Footer from '@/components/Footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
+import SocialGrid from '@/components/SocialGrid';
+
+import PromoPopup from '@/components/PromoPopup';
+
 export default function LandingPage() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -17,6 +21,7 @@ export default function LandingPage() {
 
   return (
     <div className="bg-land-bg min-h-screen text-land-text selection:bg-land-red selection:text-white">
+      <PromoPopup />
       {/* Barra de progreso de lectura */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1.5 bg-land-red origin-left z-50 shadow-md"
@@ -27,6 +32,7 @@ export default function LandingPage() {
         <HeroSection />
         <FeaturedSection />
         <TeamSection />
+        <SocialGrid />
         <MapSection />
       </main>
 

@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   description: "La excelencia de la brasa en Ayacucho",
 };
 
+import Navbar from "@/components/Navbar";
+import CookieConsent from "@/components/CookieConsent";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,6 +53,8 @@ export default function RootLayout({
           />
         </noscript>
 
+        <Navbar />
+        <CookieConsent />
         {children}
       </body>
     </html>

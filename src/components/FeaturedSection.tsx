@@ -17,7 +17,7 @@ export default function FeaturedSection() {
                         viewport={{ once: true }}
                         className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-land-red font-black mb-4 drop-shadow-sm"
                     >
-                        Clásicos <span className="text-land-brown">Imperdibles</span>
+                        CLÁSICOS <span className="text-land-brown">IMPERDIBLES</span>
                     </motion.h2>
                     <div className="h-2 w-24 bg-land-orange mx-auto rounded-full" />
                 </div>

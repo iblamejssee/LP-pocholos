@@ -42,10 +42,11 @@ export default function HeroSection() {
                     className="text-center"
                 >
                     {/* Nombre del restaurante - Limpio y elegante */}
-                    <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold tracking-tight mb-2">
-                        POCHOLO'S
+                    <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-9xl text-white font-bold tracking-tight mb-2">
+                        POCHOLO
                     </h1>
-                    <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-land-red font-black tracking-tight"
+                    <h2
+                        className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-land-red font-black tracking-tight"
                         style={{ textShadow: '0 0 30px rgba(210, 32, 30, 0.5)' }}
                     >
                         CHICKEN

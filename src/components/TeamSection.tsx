@@ -14,7 +14,7 @@ export default function TeamSection() {
                         viewport={{ once: true }}
                         className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-land-text font-bold mb-4"
                     >
-                        El Corazón de la <span className="text-land-red">Brasa</span>
+                        EL CORAZÓN DE LA <span className="text-land-red">BRASA</span>
                     </motion.h2>
                     <p className="font-body text-stone-600 text-base sm:text-lg max-w-2xl mx-auto px-2">
                         3 años sirviendo con pasión. Una familia dedicada a brindarte la mejor experiencia gastronómica.

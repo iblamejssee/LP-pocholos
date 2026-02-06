@@ -23,7 +23,7 @@ export default function MapSection() {
                         viewport={{ once: true }}
                         className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4"
                     >
-                        ¿Cómo <span className="text-land-red">Llegar</span>?
+                        ¿CÓMO <span className="text-land-red">LLEGAR</span>?
                     </motion.h2>
                     <p className="font-body text-stone-400 text-base sm:text-lg max-w-2xl mx-auto">
                         Visítanos en nuestro local. ¡Te esperamos con el mejor pollo a la brasa!
