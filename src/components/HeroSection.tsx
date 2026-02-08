@@ -43,7 +43,7 @@ export default function HeroSection() {
                 >
                     {/* Nombre del restaurante - Limpio y elegante */}
                     <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-9xl text-white font-bold tracking-tight mb-2">
-                        POCHOLO
+                        POCHOLO'S
                     </h1>
                     <h2
                         className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-land-red font-black tracking-tight"
